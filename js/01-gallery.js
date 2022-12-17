@@ -7,7 +7,7 @@ let markupGallery ='';
 for(let galleryItem of galleryItems ) {
     markupGallery += `<div class="gallery__item">
 <a href="${galleryItem.original}" 
-class="gallery__link"">
+class="gallery__link">
 <img 
 class="gallery__image" 
 src="${galleryItem.preview}" 
@@ -23,6 +23,8 @@ galleryList.insertAdjacentHTML("beforeend", markupGallery);
 galleryList.addEventListener('click', (event) => {
     event.preventDefault();
 
+    console.log();
+
     if (event.target.nodeName !== 'IMG') {
         return;
     }
@@ -35,4 +37,3 @@ galleryList.addEventListener('click', (event) => {
 
 instance.show();
 });
-
